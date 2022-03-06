@@ -62,10 +62,7 @@
          "tasks": [
              {
                  "id": 1,
-                 "inn": 123123,
-                 "address": "1qqwqdq",
-                 "create_at": "2022-03-06",
-                 "term": "123 qadqd"
+                 "fio": "вася вася вася"
              }
          ]
      }

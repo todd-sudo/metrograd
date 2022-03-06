@@ -8,11 +8,8 @@ class TaskListSerializer(ModelSerializer):
     class Meta:
         model = Task
         fields = [
+            "fio",
             "id",
-            "inn",
-            "address",
-            "create_at",
-            "term"
         ]
 
 
