@@ -2,6 +2,11 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
+import environ
+
+
+env = environ.Env()
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -9,7 +14,7 @@ SECRET_KEY = 'django-insecure-lcbgh!wkcx-no7)0uvso#ho#qpdce$l!j2tvmt6#fmn9h()9bn
 
 DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -60,11 +65,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('POSTGRES_HOST'),
-        'PORT': os.getenv('POSTGRES_PORT'),
+        'NAME': env('POSTGRES_DB'),
+        'USER': env('POSTGRES_USER'),
+        'PASSWORD': env('POSTGRES_PASSWORD'),
+        'HOST': env('POSTGRES_HOST'),
+        'PORT': env('POSTGRES_PORT'),
     },
 }
 
